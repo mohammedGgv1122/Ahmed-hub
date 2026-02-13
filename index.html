@@ -3,58 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed-hub | فخامة البدلات</title>
+    <title>Ahmed-hub | المنسق الذكي</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
     <nav>
         <div class="logo">AHMED-<span>HUB</span></div>
-        <ul class="nav-links">
+        <ul>
             <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#products">المتجر</a></li>
-            <li><a href="#contact">تواصل معنا</a></li>
+            <li><a href="#ai-section">المنسق الذكي</a></li>
         </ul>
     </nav>
 
-    <header id="home" class="hero">
+    <header class="hero">
         <div class="hero-content">
             <h1>AHMED-HUB</h1>
-            <p>عنوان الفخامة في عالم البدلات والقمصان</p>
-            <a href="#products" class="btn-main">اكتشف التشكيلة</a>
+            <p>أول متجر بدل مدعوم بالذكاء الاصطناعي</p>
+            <div class="coupon-box">
+                <input type="text" id="couponInput" placeholder="كود الخصم">
+                <button onclick="applyCoupon()">تفعيل</button>
+            </div>
         </div>
     </header>
 
     <section id="products" class="container">
-        <h2 class="section-title">أحدث صيحات الموضة</h2>
         <div class="product-grid">
-            
             <div class="card">
-                <div class="badge">الأكثر مبيعاً</div>
                 <img src="suit1.jpg" alt="بدلة">
                 <div class="card-info">
-                    <h3>بدلة كلاسيك - بريميم</h3>
-                    <p class="price">1,850 ج.م</p>
-                    <a href="https://wa.me/201234567890?text=مهتم ببدلة كلاسيك" class="wa-btn">طلب عبر واتساب</a>
+                    <h3>بدلة كلاسيك فاخرة</h3>
+                    <p class="price">2000 ج.م</p>
+                    <button onclick="getAiStyling('بدلة كلاسيك كحلي')" class="ai-btn">✨ نسق لي الطقم بالـ AI</button>
+                    <a href="https://wa.me/201234567890" class="wa-btn">اطلب واتساب</a>
                 </div>
             </div>
-
-            <div class="card">
-                <img src="shirt1.jpg" alt="قميص">
-                <div class="card-info">
-                    <h3>قميص قطن - أبيض ملكي</h3>
-                    <p class="price">650 ج.م</p>
-                    <a href="https://wa.me/201234567890?text=مهتم بقميص أبيض" class="wa-btn">طلب عبر واتساب</a>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <footer id="contact">
-        <p>جميع الحقوق محفوظة لـ Ahmed-hub &copy; 2026</p>
-    </div>
+    <section id="ai-section" class="ai-container">
+        <div id="ai-stylist-box">
+            <h4>🪄 رأي منسق Ahmed-Hub الذكي:</h4>
+            <p id="ai-suggestion">اضغط على زر التنسيق لأي قطعة ملابس وسأخبرك ماذا ترتدي معها لتكون في كامل شياكتك.</p>
+        </div>
+    </section>
 
+    <script src="script.js"></script>
 </body>
 </html>
