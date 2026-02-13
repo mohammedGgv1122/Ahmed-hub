@@ -3,53 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed-hub | المنسق الذكي</title>
+    <title>AHMED-HUB | Black & White Edition</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
     <nav>
         <div class="logo">AHMED-<span>HUB</span></div>
-        <ul>
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#ai-section">المنسق الذكي</a></li>
-        </ul>
+        <div class="nav-links">
+            <a href="#products">المجموعة</a>
+            <a href="#ai-section">المنسق الذكي</a>
+        </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <h1>AHMED-HUB</h1>
-            <p>أول متجر بدل مدعوم بالذكاء الاصطناعي</p>
+            <h1>MODERN ELEGANCE</h1>
+            <p>أول متجر بدل في مصر يعمل بالذكاء الاصطناعي</p>
             <div class="coupon-box">
-                <input type="text" id="couponInput" placeholder="كود الخصم (AHMED10)">
-                <button onclick="applyCoupon()">تفعيل الخصم</button>
+                <input type="text" id="couponInput" placeholder="كود الخصم">
+                <button onclick="applyCoupon()">تفعيل</button>
             </div>
         </div>
     </header>
 
     <section id="products" class="container">
         <div class="product-grid">
+            
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1594932224828-b4b059b6f679?q=80&w=500" alt="بدلة">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=500" alt="بدلة سوداء">
+                </div>
                 <div class="card-info">
-                    <h3>بدلة سليم فيت فاخرة</h3>
+                    <h3>بدلة سهرة كلاسيك</h3>
                     <p class="price">2,500 ج.م</p>
-                    <button onclick="getAiStyling('بدلة رمادي سليم فيت')" class="ai-btn">✨ المنسق الذكي (AI)</button>
-                    <a href="https://wa.me/201234567890" class="wa-btn">اطلب عبر واتساب</a>
+                    <button onclick="getAiStyling('بدلة سوداء كلاسيك')" class="ai-btn">تنسيق بواسطة AI</button>
+                    <a href="https://wa.me/201234567890" class="wa-btn">استفسار واتساب</a>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1594932224828-b4b059b6f679?q=80&w=500" alt="بدلة رمادي">
+                </div>
+                <div class="card-info">
+                    <h3>بدلة رمادي مودرن</h3>
+                    <p class="price">2,200 ج.م</p>
+                    <button onclick="getAiStyling('بدلة رمادي فاتح')" class="ai-btn">تنسيق بواسطة AI</button>
+                    <a href="https://wa.me/201234567890" class="wa-btn">استفسار واتساب</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section id="ai-section" class="ai-container">
+    <section id="ai-section">
         <div id="ai-stylist-box">
-            <h4>🪄 نصيحة Ahmed-Hub الذكية:</h4>
-            <p id="ai-suggestion">اضغط على زر التنسيق الذكي لأي منتج وسأخبرك ماذا ترتدي معه لتكون في كامل شياكتك.</p>
+            <h4>AI LOOKBOOK ADVISOR</h4>
+            <div class="divider"></div>
+            <p id="ai-suggestion">اختر أي قطعة من الأعلى ليقوم الذكاء الاصطناعي باقتراح الحذاء والساعة والقميص المناسب لك.</p>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2026 AHMED-HUB. جميع الحقوق محفوظة.</p>
+    </footer>
 
     <script src="script.js"></script>
+    
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 </html>
