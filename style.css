@@ -160,3 +160,14 @@ nav {
     font-weight: bold;
     cursor: pointer;
 }
+/* إلغاء تأثير الأبيض والأسود عن الصور */
+.product-card img {
+    filter: grayscale(0%) !important;
+    transition: none !important;
+}
+
+/* التأكد إن الصورة مش هتتغير لما تقف عليها */
+.product-card:hover img {
+    filter: grayscale(0%) !important;
+    transform: none !important;
+}
