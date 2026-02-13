@@ -1,1 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main
 
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "products"
+    label: "المنتجات"
+    folder: "products"
+    create: true
+    slug: "{{title}}"
+    fields:
+      - {label: "اسم البدلة", name: "title", widget: "string"}
+      - {label: "السعر", name: "price", widget: "string"}
+      - {label: "صورة البدلة", name: "image", widget: "image"}
+      - {label: "وصف للـ AI", name: "body", widget: "text", hint: "اكتب وصف البدلة عشان الـ AI يعرف ينسقها"}
