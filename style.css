@@ -1,27 +1,162 @@
-:root { --gold: #d4af37; --dark: #0a0a0a; }
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
-body { background: var(--dark); color: white; line-height: 1.6; }
+:root {
+    --bg: #000000;
+    --text: #ffffff;
+    --accent: #ffffff; /* التباين هيكون بالأبيض */
+    --card-bg: #0a0a0a;
+    --border: #333333;
+}
 
-nav { display: flex; justify-content: space-between; padding: 20px 5%; background: #000; border-bottom: 1px solid #222; }
-.logo { font-size: 24px; font-weight: 900; }
-.logo span { color: var(--gold); }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+}
 
-.hero { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), #0a0a0a), url('hero.jpg') center/cover; }
-.hero h1 { font-size: 3.5rem; letter-spacing: 5px; }
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
 
-.container { padding: 50px 5%; }
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.card { background: #111; border-radius: 10px; overflow: hidden; border: 1px solid #222; transition: 0.3s; }
-.card:hover { border-color: var(--gold); transform: translateY(-5px); }
-.card img { width: 100%; height: 300px; object-fit: cover; }
-.card-info { padding: 20px; }
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: #000;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-.ai-btn { width: 100%; padding: 10px; background: transparent; color: var(--gold); border: 1px solid var(--gold); cursor: pointer; margin-bottom: 10px; font-weight: bold; border-radius: 5px; }
-.ai-btn:hover { background: var(--gold); color: black; }
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
 
-.wa-btn { display: block; text-align: center; background: #25d366; color: white; padding: 10px; text-decoration: none; border-radius: 5px; }
+.logo span {
+    color: #888; /* رمادي خفيف للـ HUB */
+}
 
-#ai-stylist-box { background: #151515; padding: 25px; border-radius: 10px; border-right: 5px solid var(--gold); margin: 20px 5%; min-height: 100px; }
-.coupon-box { margin-top: 20px; }
-.coupon-box input { padding: 10px; border-radius: 5px; border: none; }
-.coupon-box button { padding: 10px 20px; background: var(--gold); border: none; cursor: pointer; font-weight: bold; }
+/* Hero Section */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+/* AI Box - الستايل الأبيض والأسود */
+#ai-stylist-box {
+    background: #ffffff; /* خلفية بيضاء لكسر الحدة */
+    color: #000000;      /* كلام أسود */
+    padding: 40px;
+    margin: 50px 8%;
+    border-radius: 0;    /* حواف حادة أقيم */
+    text-align: center;
+}
+
+#ai-stylist-box h4 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+/* Cards */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 80px 8%;
+}
+
+.card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    transition: 0.5s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+}
+
+.card img {
+    width: 100%;
+    filter: grayscale(100%); /* الصور هتكون أبيض وأسود وهتتلون لما تلمسها */
+    transition: 0.5s;
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+}
+
+.card-info {
+    padding: 25px;
+    text-align: center;
+}
+
+/* Buttons */
+.ai-btn {
+    width: 100%;
+    padding: 15px;
+    background: #fff;
+    color: #000;
+    border: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.ai-btn:hover {
+    background: #888;
+    color: #fff;
+}
+
+.wa-btn {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid var(--border);
+    padding: 12px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.wa-btn:hover {
+    border-color: #fff;
+}
+
+/* Coupon Box */
+.coupon-box input {
+    background: #000;
+    border: 1px solid var(--border);
+    color: #fff;
+    padding: 15px;
+    outline: none;
+}
+
+.coupon-box button {
+    background: #fff;
+    color: #000;
+    padding: 15px 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
