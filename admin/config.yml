@@ -15,4 +15,4 @@ collections:
       - {label: "اسم البدلة", name: "title", widget: "string"}
       - {label: "السعر", name: "price", widget: "string"}
       - {label: "صورة البدلة", name: "image", widget: "image"}
-      - {label: "وصف للـ AI", name: "body", widget: "text", hint: "اكتب وصف البدلة عشان الـ AI يعرف ينسقها"}
+      - {label: "وصف للـ AI", name: "body", widget: "text"}
